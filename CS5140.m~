@@ -1,9 +1,9 @@
 function results = CS5140()
 
-load nlloyds1.dat;
-[n,d] = size(nlloyds1);
+load .dat;
+[n,d] = size(nkmeans1);
 
-dissimilarities = pdist(nlloyds1);
+dissimilarities = pdist(nkmeans1);
 
 
 [Y,stress] = mdscale(dissimilarities,2,'criterion','metricsstress');
@@ -13,10 +13,10 @@ scatter(dissimilarities,distances,'ro');
 xlabel('Dissimilarities'); ylabel('Distances')
 
 hold on
-load nlloyds2.dat;
-[n,d] = size(nlloyds2);
+load nkmeans2.dat;
+[n,d] = size(nkmeans2);
 
-dissimilarities = pdist(nlloyds2);
+dissimilarities = pdist(nkmeans2);
 
 
 [Y,stress] = mdscale(dissimilarities,2,'criterion','metricsstress');
@@ -28,10 +28,10 @@ xlabel('Dissimilarities'); ylabel('Distances')
 hold off
 
 hold on
-load nlloyds4.dat;
-[n,d] = size(nlloyds4);
+load nkmeans4.dat;
+[n,d] = size(nkmeans4);
 
-dissimilarities = pdist(nlloyds4);
+dissimilarities = pdist(nkmeans4);
 
 
 [Y,stress] = mdscale(dissimilarities,2,'criterion','metricsstress');
