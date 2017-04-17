@@ -1,17 +1,12 @@
 function results = CS5140()
 
-hold on
-plot(0,0,'r*')
-hold off
-
-%{
 load ngonzalez1.dat;
 [n,d] = size(ngonzalez1);
 
 dissimilarities = pdist(ngonzalez1);
 
 
-[Y,stress] = mdscale(dissimilarities,2,'criterion','metricsstress');
+[Y,stress] = cmdscale(dissimilarities,2,'criterion','metricsstress');
 distances = pdist(Y);
 %plot(dissimilarities,distances,'bo', [0 max(dissimilarities)],[0 max(dissimilarities)],'r.-');
 scatter(dissimilarities,distances,'ro');
@@ -24,7 +19,7 @@ load ngonzalez2.dat;
 dissimilarities = pdist(ngonzalez2);
 
 
-[Y,stress] = mdscale(dissimilarities,2,'criterion','metricsstress');
+[Y,stress] = cmdscale(dissimilarities,2,'criterion','metricsstress');
 distances = pdist(Y);
 %plot(dissimilarities,distances,'bo', [0 max(dissimilarities)],[0 max(dissimilarities)],'r.-');
 scatter(dissimilarities,distances,'bo');
@@ -41,7 +36,7 @@ load ngonzalez4.dat;
 dissimilarities = pdist(ngonzalez4);
 
 
-[Y,stress] = mdscale(dissimilarities,2,'criterion','metricsstress');
+[Y,stress] = cmdscale(dissimilarities,2,'criterion','metricsstress');
 distances = pdist(Y);
 %plot(dissimilarities,distances,'bo', [0 max(dissimilarities)],[0 max(dissimilarities)],'r.-');
 scatter(dissimilarities,distances,'co');
@@ -49,5 +44,5 @@ xlabel('Dissimilarities'); ylabel('Distances')
 
 hold off
 disp('Done');
-%}
+
 end
